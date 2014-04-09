@@ -1,0 +1,25 @@
+<configuration>
+        <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+            <file>C:/Users/Michael/workspace/Project/results.log</file>
+            <append>false</append>
+            <encoder>
+                <pattern>%-5relative %-5level %d{dd MMM yyyy HH:mm:ss.SSS} %logger{35} - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%-5relative %-5level %logger{35} - %msg%n</pattern>
+                
+            </encoder>
+        </appender>
+
+
+        <logger name="ie.gmit.project.Main" level="INFO" additivity="false">
+            <appender-ref ref="FILE" />
+        </logger>
+
+        <root level="ERROR">
+            <appender-ref ref="STDOUT" />
+        </root>
+    </configuration>
